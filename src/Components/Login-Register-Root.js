@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from './Login';
+import SignUp from './SignUp';
 import '../App.css';
 
 function LoginRegisterRoot(){
@@ -19,7 +20,7 @@ function LoginRegisterRoot(){
                 </div>
 
                 <div className="FormTitle">
-                    <a href="#" className="FormTitle__Link FormTitle__Link--Active">Sign In</a> or <a href="#" className="FormTitle__Link">Sign Up</a>
+                    <a href="#" className="FormTitle__Link">Sign In</a> or <a href="#" className="FormTitle__Link FormTitle__Link--Active">Sign Up</a>
                 </div>
 
                 <Login/>
