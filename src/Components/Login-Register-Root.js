@@ -1,33 +1,35 @@
 import React from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
+import {BrowserRouter, Route, Link, NavLink} from 'react-router-dom';
 import '../App.css';
 
 function LoginRegisterRoot(){
 
     return(
-        <div className="LoginRegisterRoot">
+        <BrowserRouter>
+            <div className="LoginRegisterRoot">
 
-            <div className="App__Aside"></div>
+                <div className="App__Aside"></div>
 
-            <div className="App__Form">
+                <div className="App__Form">
 
-                <div className="PageSwitcher">
+                    <div className="PageSwitcher">
+                        <NavLink exact to="/" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign In</NavLink>
+                        <NavLink to="/SignUp" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
+                    </div>
 
-                    <a href="#" className="PageSwitcher__Item">Sign In</a>
+                    <div className="FormTitle">
+                        <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> or 
+                        <NavLink to="/SignUp" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
+                    </div>
 
-                    <a href="#" className="PageSwitcher__Item PageSwitcher__Item--Active">Sign Up</a>
+                    <Route exact path="/" component={Login}/>
+                    <Route path="/SignUp" component={SignUp}/>
+
                 </div>
-
-                <div className="FormTitle">
-                    <a href="#" className="FormTitle__Link">Sign In</a> or <a href="#" className="FormTitle__Link FormTitle__Link--Active">Sign Up</a>
-                </div>
-
-                <Login/>
-
-
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
 
