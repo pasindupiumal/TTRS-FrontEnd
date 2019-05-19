@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import '../App.css';
+import axios from 'axios';
 class SignUp extends Component{
 
     state = {
@@ -14,7 +15,36 @@ class SignUp extends Component{
        
     }
    
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id] : e.target.value
+        })
+    }
 
+    handleSubmit = (e) => {
+
+        e.preventDefault();
+
+        const user = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            nic: this.state.nic,
+            mobileNumber: this.state.mobileNumber,
+            password: this.state.password1
+        }
+
+
+        axios.post('http://localhost:3000/api/users/', user).then(res => {
+            this.props.history.push('/');
+        }).catch(err => {
+            console.log(err);
+            console.log('Registration Unsuccessful');
+        });
+
+        
+
+    }
     
 
     render(){

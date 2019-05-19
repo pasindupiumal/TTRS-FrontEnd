@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
 import {BrowserRouter, Route, NavLink} from 'react-router-dom';
-import HomeRoot from './Home-Root';
 import '../App.css';
 
 class LoginRegisterRoot extends Component{

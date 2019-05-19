@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import LoginRegister from './Components/Login-Register-Root';
 import HomeRoot from './Components/Home-Root';
+import AboutUs from './Components/AboutUs';
 import ProtectedRoute from './protected_route';
 
 function App() {
@@ -11,8 +11,9 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={LoginRegister}/>
-          <Route exact path="/SignUp" component={LoginRegister}/>
-          <ProtectedRoute exact path="/Home" component={HomeRoot}/>
+          <Route path="/SignUp" component={LoginRegister}/>
+          <ProtectedRoute path="/Home" component={HomeRoot}/>
+          <ProtectedRoute path="/AboutUs" component={AboutUs}/>
           <Route path="*" component={() => "404 Not Found"}/>
         </Switch>
         

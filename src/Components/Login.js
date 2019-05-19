@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../App.css';
-
+import Auth from '../auth.js';
+import axios from 'axios';
 class Login extends Component{
 
     state = {
@@ -16,8 +17,13 @@ class Login extends Component{
     }
 
     handleSubmit = (e) => {
-    
-        this.props.handleLogin();
+
+        e.preventDefault();
+        Auth.login(() => {
+
+            axios.get('http://localhost:4000/api/trains/').then(res => console.log(res)).catch(err => console.log(err));
+            this.props.handleLogin();
+        })
     }
 
     render(){
