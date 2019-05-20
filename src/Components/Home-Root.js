@@ -28,8 +28,7 @@ class HomeRoot extends Component{
           <ProtectedRoute  exact path="/Home/AboutUs" component={AboutUs}/>
           <ProtectedRoute  exact path="/Home/Payment" component={Payment}/>
 
-        
-
+          
         </div>
         
       </BrowserRouter>

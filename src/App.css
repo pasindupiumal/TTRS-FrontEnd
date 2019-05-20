@@ -140,3 +140,141 @@
   padding-bottom: 2px;
   margin-left: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.TrainSelection body{
+  font-family: Raleway;
+  color: #555;
+  background: #ff5252;
+  margin: 10px 30px;
+}
+#homepage{
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 10px 20px;
+  background: #fdfdfd;
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+.TrainSelection input[type="text"]{
+  width: 200px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.TrainSelection label{
+  font-weight: bold;
+  padding-right: 20px;
+}
+.TrainSelection title{
+  color: #fff;
+  text-align: center;
+  font-size: 48px;
+}
+#homepage h1{
+  text-align: center;
+}
+.TrainSelection form{
+  max-width: 1300px;
+}
+.TrainSelection input[type="submit"]{
+  background: #555;
+   color: #fff;
+   border: 0;
+   padding: 10px;
+   font-size: 18px;
+   width: 200px;
+   margin: 0 auto;
+   display: block;
+   cursor: pointer;
+   border-radius: 4px;
+}
+.TrainSelection ul{
+  margin: 0;
+  padding: 0;
+}
+
+.TrainSelection span{
+  display: inline-block;
+  margin: 0 20px;
+}
+.TrainSelection span.dist{
+  color: green;
+  float: right;
+}
+.TrainSelection span.true{
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  background: green;
+}
+.TrainSelection span.false{
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  background: #ff5252;
+}
+.TrainSelection button{
+  background: lightsteelblue;
+  border: 0;
+  padding: 5px 10px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.TrainSelection button.false{display: none;}
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+  padding-top: 20px;
+  padding-bottom: 60px;
+	}
+	ul#horizontal-list li {
+    display: inline;
+    padding-right: 100px;
+    padding-left: 13px;
+  }
+  
+
+.table{
+  display: Table;
+  margin: 0 auto;
+  
+}
+
+table{
+  table-layout: fixed;
+  width:100%;
+}
+
+td{
+  width: 100%;
+}
+
+.spanLayout{
+  table-layout: fixed;
+}
