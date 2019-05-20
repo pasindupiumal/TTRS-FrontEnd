@@ -343,6 +343,25 @@ th {
    cursor: pointer;
    border-radius: 4px;
 }
+
+.trainBox input[type="text"]{
+  width: 150px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.trainBox input[type="date"]{
+  width: 150px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
 .Payment ul{
   margin: 0;
   padding: 0;
@@ -391,6 +410,18 @@ ul#horizontal-list-p {
     padding-left: 45px;
   }
   
+  ul#horizontal-list-pp {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    }
+    ul#horizontal-list-pp li {
+      display: inline;
+      padding-right: 30px;
+      padding-left: 45px;
+    }
+    
 
 .table{
   display: Table;

@@ -36,7 +36,7 @@ class HomeRoot extends Component{
 
           <ProtectedRoute  exact path="/Home/" component={TrainSelection} getSelectedTrain={this.getSelectedTrain}/>
           <ProtectedRoute  exact path="/Home/AboutUs" component={AboutUs}/>
-          <ProtectedRoute  exact path="/Home/Payment" component={Payment}/>
+          <ProtectedRoute  exact path="/Home/Payment" component={Payment} selectedTrain={this.state.selectedTrain}/>
 
           
         </div>

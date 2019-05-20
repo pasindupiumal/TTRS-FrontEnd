@@ -72,6 +72,54 @@ class Payment extends Component{
                     
                 </div>
 
+                <div id="homepage" className="trainBox">
+                    
+                    <form onSubmit={this.handleSubmit}>
+
+                        <ul id="horizontal-list-pp">
+                            
+                            <li> 
+                                <label>Train Name</label>
+                                <input type="text" value={this.props.selectedTrain.trainName} readOnly/>
+
+                            </li>
+
+                            <li>
+                                <label>Origin</label>
+                                <input type="text" value={this.props.selectedTrain.origin} readOnly/>
+
+                            </li>
+
+                            <li>
+                                <label>Destination</label>
+                                <input type="text" value={this.props.selectedTrain.destination} readOnly/>
+
+                            </li>
+
+                            <li>
+                                <label>Price</label>
+                                <input type="text" value={this.props.selectedTrain.price} readOnly/>
+
+                            </li>
+
+                            <li>
+                                <label>Number of Tickets</label>
+                                <input type="text" id="noOfTickets"/>
+
+                            </li>
+
+                            <li>
+
+                                <label>Date of Travel</label>
+                                <input type="date" id="dot"/>
+                            </li>
+
+                            
+                        </ul>
+
+                    </form>
+                </div>
+
             </div>
         )
     }
