@@ -36,8 +36,8 @@ class TrainSelection extends Component{
     
     }
 
-    handleOnClick = (e) => {
-        this.props.loadTheOtherPage();
+    handleOnClick = (train) => {
+        this.props.getSelectedTrain(train);
         this.props.history.push('/Home/Payment');
     }
 
@@ -91,7 +91,7 @@ class TrainSelection extends Component{
                                             
                                             this.state.trains.map((train, key) => {
                                                 return(
-                                                    <tr key={key}>
+                                                    <tr key={key} onClick={()=>{this.handleOnClick(train)}}>
                                                         <td>{train.trainName}</td>
                                                         <td>{train.origin}</td>
                                                         <td>{train.destination}</td>

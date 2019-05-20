@@ -8,13 +8,23 @@ import Payment from './Payment';
 
 class HomeRoot extends Component{
  
+  state = {
+    selectedTrain: null,
+  }
+
+
   handleLogout = () => {
     this.props.history.push('/');
   }
 
-  loadTheOtherPage = () => {
-    console.log('hello, world');
+  getSelectedTrain = (train) => {
+    this.setState({
+      selectedTrain: train
+    }, ()=> console.log(this.state.selectedTrain))
+
+  
   }
+
 
   render(){
     return (
@@ -24,7 +34,7 @@ class HomeRoot extends Component{
           <NavBar handleLogout={this.handleLogout}/>
           
 
-          <ProtectedRoute  exact path="/Home/" component={TrainSelection} loadTheOtherPage={this.loadTheOtherPage}/>
+          <ProtectedRoute  exact path="/Home/" component={TrainSelection} getSelectedTrain={this.getSelectedTrain}/>
           <ProtectedRoute  exact path="/Home/AboutUs" component={AboutUs}/>
           <ProtectedRoute  exact path="/Home/Payment" component={Payment}/>
 
