@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import '../App.css';
 import Auth from '../auth.js';
-import axios from 'axios';
 class Login extends Component{
 
     state = {
@@ -17,9 +16,8 @@ class Login extends Component{
     }
 
     handleSubmit = (e) => {
-
         e.preventDefault();
-        
+        Auth.login(this.props.handleLogin);
     }
 
     render(){

@@ -10,10 +10,11 @@ class TrainSelection extends Component{
     render(){
         return(
             <div className="TrainSelection">
-                <button onClick={this.handleOnClick}>Load the other page</button>
+                 
+                <h3 className="title center">Train Selection</h3>
             </div>
         )
-    }
+    } 
 }
 
 export default TrainSelection;

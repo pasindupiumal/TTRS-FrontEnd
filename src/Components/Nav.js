@@ -4,9 +4,7 @@ import Auth from '../auth.js';
 class NavBar extends Component{
 
     handleLogout = (e) => {
-        Auth.logout(() => {
-            this.porps.handleLogout();
-        })
+        Auth.logout(this.props.handleLogout);
     }
 
     render(){

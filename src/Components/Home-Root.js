@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import NavBar from './Nav.js';
 import ProtectedRoute from '../protected_route';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import TrainSelection from './TrainSelection.js';
 import AboutUs from './AboutUs';
 import Payment from './Payment';
@@ -9,7 +9,7 @@ import Payment from './Payment';
 class HomeRoot extends Component{
  
   handleLogout = () => {
-    this.context.history.push('/');
+    this.props.history.push('/');
   }
 
   loadTheOtherPage = () => {
