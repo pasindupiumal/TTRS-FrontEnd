@@ -53,7 +53,7 @@ class TrainSelection extends Component{
 
                     <form onSubmit={this.handleSubmit}>
 
-                        <ul id="horizontal-list">
+                        <ul id="horizontal-list-ts">
                             
                             <li> 
                                 <label>Origin</label>
