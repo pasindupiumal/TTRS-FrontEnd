@@ -29,6 +29,7 @@ class LoginRegisterRoot extends Component{
                             <NavLink to="/SignUp" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
                         </div>
 
+
                         <Route exact path="/" render={(routeProps) => (
                             <Login {...routeProps} handleLogin={this.handleLogin}/>
                         )}  />

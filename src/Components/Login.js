@@ -19,11 +19,7 @@ class Login extends Component{
     handleSubmit = (e) => {
 
         e.preventDefault();
-        Auth.login(() => {
-
-            axios.get('http://localhost:4000/api/trains/').then(res => console.log(res)).catch(err => console.log(err));
-            this.props.handleLogin();
-        })
+        
     }
 
     render(){
