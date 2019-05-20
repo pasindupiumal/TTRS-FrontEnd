@@ -186,6 +186,7 @@
 }
 .TrainSelection label{
   font-weight: bold;
+  color: black;
   padding-right: 20px;
 }
 .TrainSelection title{
@@ -317,7 +318,8 @@ th {
   border: 1px solid #ddd;
 }
 .Payment label{
-  font-weight: bold;
+  font-weight: normal;
+  color:black;
   padding-right: 20px;
 }
 .Payment title{
