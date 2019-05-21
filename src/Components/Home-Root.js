@@ -8,6 +8,7 @@ import Payment from './Payment';
 import axios from 'axios';
 import Auth from '../auth.js';
 import {withAlert} from 'react-alert';
+import nodemailer from 'nodemailer';
 import Summary from './Summary';
 
 class HomeRoot extends Component{
@@ -52,7 +53,11 @@ class HomeRoot extends Component{
     })
   }
 
-  sendEmail = () => {
+  sendEmail = async () => {
+    var transporter = nodemailer.createTransport({host:'smtp.gmail.com',port:587,secure:true ,auth:{user:'chamikarox99@gmail.com'},pass:'chamikarox'})
+    var mailOptions= {from:'chamikarox99@gmail.com', to : this.state.loggedUser.email,subject:'Train Ticket Reservation System', text:'Payment Successful'}
+
+    let info = await transporter.sendMail(mailOptions)
 
   }
 
