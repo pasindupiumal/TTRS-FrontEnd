@@ -27,7 +27,6 @@ function App() {
             <Route exact path="/SignUp" component={LoginRegister}/>
             <ProtectedRoute exact path="/Home" component={HomeRoot}/>
             <ProtectedRoute exact path="/Home/AboutUs" component={AboutUs}/>
-            <ProtectedRoute exact path="/Home/Payment" component={Payment}/>
             <Route path="*" component={() => "404 Not Found"}/>
           </Switch>         
         </div> 

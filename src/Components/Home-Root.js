@@ -5,13 +5,34 @@ import {BrowserRouter} from 'react-router-dom';
 import TrainSelection from './TrainSelection.js';
 import AboutUs from './AboutUs';
 import Payment from './Payment';
+import axios from 'axios';
+import Auth from '../auth.js';
+import {withAlert} from 'react-alert';
 
 class HomeRoot extends Component{
  
   state = {
     selectedTrain: null,
+    loggedUser: null
+
   }
 
+  componentDidMount = () => {
+    
+    const user = Auth.getDecodedToken();
+
+    axios.get('http://localhost:3000/api/users/' + user._id, {
+      headers:{
+        'x-auth-token': localStorage.getItem('token')
+      }
+    }).then((res) => {
+      this.setState({
+        loggedUser: res.data
+      })
+    }).catch((err) => {
+      this.props.alert.error(err.response.data);
+    })
+  };
 
   handleLogout = () => {
     this.props.history.push('/');
@@ -20,9 +41,7 @@ class HomeRoot extends Component{
   getSelectedTrain = (train) => {
     this.setState({
       selectedTrain: train
-    }, ()=> console.log(this.state.selectedTrain))
-
-  
+    })
   }
 
 
@@ -36,7 +55,7 @@ class HomeRoot extends Component{
 
           <ProtectedRoute  exact path="/Home/" component={TrainSelection} getSelectedTrain={this.getSelectedTrain}/>
           <ProtectedRoute  exact path="/Home/AboutUs" component={AboutUs}/>
-          <ProtectedRoute  exact path="/Home/Payment" component={Payment} selectedTrain={this.state.selectedTrain}/>
+          <ProtectedRoute  exact path="/Home/Payment" component={Payment} selectedTrain={this.state.selectedTrain} loggedUser={this.state.loggedUser}/>
 
           
         </div>
@@ -47,4 +66,4 @@ class HomeRoot extends Component{
   }
 }
 
-export default HomeRoot;
+export default withAlert()(HomeRoot);

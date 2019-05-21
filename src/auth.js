@@ -1,6 +1,10 @@
 import jwtDecode from 'jwt-decode';
 
 class auth{
+
+    constructor() {
+        this.token = null
+    }
     
     login(token, callback){
         localStorage.setItem('token', token);
@@ -13,10 +17,15 @@ class auth{
         callback();
     }
 
+    getDecodedToken(){
+        return this.token;
+    }
+
     isAuthenticated(){
         
        try{
            const token = jwtDecode(localStorage.getItem('token'));
+           this.token = token;
            return true;
        }
        catch(ex){

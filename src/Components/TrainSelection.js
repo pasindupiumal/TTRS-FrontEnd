@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {withAlert} from 'react-alert';
 
 class TrainSelection extends Component{
     
@@ -24,14 +25,19 @@ class TrainSelection extends Component{
             params:{
                 origin: origin,
                 destination: destination,
+            },
+            
+            headers:{
+                'x-auth-token': localStorage.getItem('token')
             }
+
         }).then((res) => {
 
             this.setState({
                 trains: res.data
             })
         }).catch((err) => {
-            console.log(err.message);
+            this.props.alert.error(err.response.data);
         })
     
     }
@@ -120,4 +126,4 @@ class TrainSelection extends Component{
     } 
 }
 
-export default TrainSelection;
+export default withAlert()(TrainSelection);
