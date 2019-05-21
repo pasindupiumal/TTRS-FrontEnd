@@ -1,21 +1,27 @@
+import jwtDecode from 'jwt-decode';
+
 class auth{
-
-    constrcutor(){
-        this.authenticated = false;
-    }
-
-    login(callback){
-        this.authenticated = true;
+    
+    login(token, callback){
+        localStorage.setItem('token', token);
         callback();
     }
 
     logout(callback){
-        this.authenticated = false;
+        localStorage.removeItem('token');
+        localStorage.clear();
         callback();
     }
 
     isAuthenticated(){
-        return this.authenticated;
+        
+       try{
+           const token = jwtDecode(localStorage.getItem('token'));
+           return true;
+       }
+       catch(ex){
+           return false;
+       }
     }
 
 }

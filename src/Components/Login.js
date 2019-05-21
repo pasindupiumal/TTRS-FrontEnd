@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import '../App.css';
 import Auth from '../auth.js';
+import {withAlert} from 'react-alert';
+import axios from 'axios';
+import jwtDecode from 'jwt-decode';
+
 class Login extends Component{
 
     state = {
@@ -17,7 +21,21 @@ class Login extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
-        Auth.login(this.props.handleLogin);
+
+        const user = {
+            email: this.state.email,
+            password: this.state.password
+        }
+
+        axios.post('http://localhost:3000/api/auth/', user).then((res) => {
+            Auth.login(res.data, ()=>{
+                this.props.alert.success('Login Successful');
+                this.props.handleLogin();
+            })
+        }).catch((err) => {
+            this.props.alert.error(err.response.data);
+        });
+        
     }
 
     render(){
@@ -45,4 +63,4 @@ class Login extends Component{
     }
 }
 
-export default Login;
+export default withAlert()(Login);
