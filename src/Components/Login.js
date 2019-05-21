@@ -4,7 +4,6 @@ import '../App.css';
 import Auth from '../auth.js';
 import {withAlert} from 'react-alert';
 import axios from 'axios';
-import jwtDecode from 'jwt-decode';
 
 class Login extends Component{
 
@@ -35,7 +34,7 @@ class Login extends Component{
         }).catch((err) => {
             this.props.alert.error(err.response.data);
         });
-        
+
     }
 
     render(){
