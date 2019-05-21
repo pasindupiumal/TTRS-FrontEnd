@@ -1,6 +1,74 @@
 import React, {Component} from 'react';
 import '../App.css'
+import {withAlert} from 'react-alert';
+
 class Payment extends Component{
+
+    state = {
+        noOfTickets: null,
+        dot: null,
+        cardNumber: null,
+        expireDate: null,
+        csv: null,
+        mobileNumber: null,
+        pin: null,
+
+
+    }
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        let payment = {};
+        
+        if(document.getElementById('creditCard').checked){
+            payment = {
+                not: this.state.noOfTickets,
+                dot: this.state.dot,
+                pm: 'Credit Card',
+                cardNumber: this.state.cardNumber,
+                expireDate: this.state.expireDate,
+                csv: this.state.csv
+
+            }
+        }
+        else if(document.getElementById('mobilePayment').checked){
+            
+            if(this.state.mobileNumber === null){
+                payment = {
+                    not: this.state.noOfTickets,
+                    dot: this.state.dot,
+                    pm: 'Mobile Payment',
+                    mobileNumber: this.props.loggedUser.mobileNumber,
+                    pin: this.state.pin
+                }
+            }
+            else{
+                payment = {
+                    not: this.state.noOfTickets,
+                    dot: this.state.dot,
+                    pm: 'Mobile Payment',
+                    mobileNumber: this.state.mobileNumber,
+                    pin: this.state.pin
+                }
+            }
+
+            
+        }
+
+        this.props.alert.show('Validating Payment Details');
+
+        setTimeout(()=> {this.props.alert.success('Validation Successful');
+        this.props.getPaymentDetails(payment);
+        this.props.history.push('/Home/Summary');
+    }, 1500);
+
+    }
 
     render(){
         
@@ -95,14 +163,14 @@ class Payment extends Component{
 
                             <li>
                                 <label>Number of Tickets</label>
-                                <input type="text" id="noOfTickets"/>
+                                <input type="text" id="noOfTickets" onChange={this.handleChange}/>
 
                             </li>
 
                             <li>
 
                                 <label>Date of Travel</label>
-                                <input type="date" id="dot"/>
+                                <input type="date" id="dot" onChange={this.handleChange}/>
                             </li>
 
                             
@@ -122,7 +190,7 @@ class Payment extends Component{
                             <li> 
                                 <label htmlFor="creditCard">
                                     
-                                    <input type="radio" id="creditCard" name="payment" value="creditcard" checked="checked"/> 
+                                    <input type="radio" id="creditCard" name="payment" value="creditcard" checked="checked" onChange={this.handleChange}/> 
                                     <span>Credit Card Payment</span>
                                     
                                 </label>
@@ -131,19 +199,19 @@ class Payment extends Component{
 
                             <li>
                                 <label>Card Number</label>
-                                <input type="text"/>
+                                <input type="text" id="cardNumber" onChange={this.handleChange}/>
 
                             </li>
 
                             <li>
                                 <label>Expire Date</label>
-                                <input type="text" placeholder="yy/mm"/>
+                                <input type="text" placeholder="yy/mm" id="expireDate" onChange={this.handleChange}/>
 
                             </li>
 
                             <li>
                                 <label>CSV</label>
-                                <input type="text"/>
+                                <input type="text" id="csv" onChange={this.handleChange}/>
 
                             </li>
 
@@ -155,7 +223,7 @@ class Payment extends Component{
                             <li> 
                                 <label htmlFor="mobilePayment">
                                     
-                                    <input type="radio" name="payment" value="mobile" id="mobilePayment"/> 
+                                    <input type="radio" name="payment" value="mobile" id="mobilePayment" onChange={this.handleChange}/> 
                                     <span>Mobile Payment</span>
                                     
                                 </label>
@@ -164,13 +232,13 @@ class Payment extends Component{
 
                             <li>
                                 <label>Mobile Number</label>
-                                <input type="text" value={this.props.loggedUser.mobileNumber}/>
+                                <input type="text" id="mobileNumber" onChange={this.handleChange} value={this.props.loggedUser.mobileNumber}/>
 
                             </li>
 
                             <li>
                                 <label>PIN</label>
-                                <input type="password"/>
+                                <input type="password" id="pin" onChange={this.handleChange}/>
 
                             </li>
                             
@@ -179,7 +247,7 @@ class Payment extends Component{
                         <br/>
 
                         <div className="container center" id="proceedContainer">
-                             <button id="proceedButton">Proceed</button>
+                             <button id="proceedButton" onClick={this.handleSubmit}>Proceed</button>
                         </div>
 
                     </form>
@@ -190,4 +258,4 @@ class Payment extends Component{
     }
 }
 
-export default Payment;
+export default withAlert()(Payment);

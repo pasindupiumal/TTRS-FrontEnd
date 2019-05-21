@@ -453,13 +453,266 @@ th {
   cursor: pointer;
 }
 
+#confirmPayment{
+  background: lightsteelblue;
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom:10px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+#proceedContainer{
+  padding-bottom:30px;
+}
+
+#paymentButtonCt{
+  padding-bottom:30px;
+  padding-top:30px;
+}
+
+
+.Payment button.false{display: none;}
+
+ul#horizontal-list-p {
+	min-width: 696px;
+	list-style: none;
+  padding-top: 20px;
+  padding-bottom: 30px;
+	}
+	ul#horizontal-list-p li {
+    display: inline;
+    padding-right: 65px;
+    padding-left: 45px;
+  }
+  
+  ul#horizontal-list-pp {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    }
+    ul#horizontal-list-pp li {
+      display: inline;
+      padding-right: 30px;
+      padding-left: 45px;
+    }
+
+  ul#horizontal-list-ppp {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    }
+    ul#horizontal-list-ppp li {
+      display: inline;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+    
+
+.table{
+  display: Table;
+  margin: 0 auto;
+  
+}
+
+table{
+  table-layout: fixed;
+  width:100%;
+}
+
+td{
+  width: 100%;
+  cursor:pointer;
+}
+
+.spanLayout{
+  table-layout: fixed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.Summary body{
+  font-family: Raleway;
+  color: #555;
+  background: #ff5252;
+  margin: 10px 30px;
+}
+#homepageSummary{
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 10px 20px;
+  background: #fdfdfd;
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+.Summary input[type="text"]{
+  width: 200px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.Summary label{
+  font-weight: normal;
+  color:black;
+  padding-right: 20px;
+}
+.Summary title{
+  color: #fff;
+  text-align: center;
+  font-size: 48px;
+}
+#homepage h1{
+  text-align: center;
+}
+.Summary form{
+  max-width: 1300px;
+}
+.Summary input[type="submit"]{
+  background: #555;
+   color: #fff;
+   border: 0;
+   padding: 10px;
+   font-size: 18px;
+   width: 200px;
+   margin: 0 auto;
+   display: block;
+   cursor: pointer;
+   border-radius: 4px;
+}
+
+.trainBox input[type="text"]{
+  width: 150px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.SummaryBox input[type="text"]{
+  width: 150px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.SummaryBox input[type="password"]{
+  width: 150px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+
+.trainBox input[type="date"]{
+  width: 150px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#noOfTickets {
+  width: 150px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid blue;
+}
+
+
+#dot {
+  width: 150px;
+  height: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid blue;
+}
+
+
+
+.Summary ul{
+  margin: 0;
+  padding: 0;
+}
+
+.Summary span{
+  display: inline-block;
+  margin: 0 20px;
+}
+.Summary span.dist{
+  color: green;
+  float: right;
+}
+.Summary span.true{
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  background: green;
+}
+.Summary span.false{
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  background: #ff5252;
+}
+.Summary button{
+  background: lightsteelblue;
+  border: 0;
+  padding: 5px 10px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+#proceedButton{
+  background: lightsteelblue;
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom:10px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 
 #proceedContainer{
   padding-bottom:30px;
 }
 
 
-.Payment button.false{display: none;}
+.Summary button.false{display: none;}
 
 ul#horizontal-list-p {
 	min-width: 696px;

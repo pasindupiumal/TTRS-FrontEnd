@@ -8,12 +8,14 @@ import Payment from './Payment';
 import axios from 'axios';
 import Auth from '../auth.js';
 import {withAlert} from 'react-alert';
+import Summary from './Summary';
 
 class HomeRoot extends Component{
  
   state = {
     selectedTrain: null,
-    loggedUser: null
+    loggedUser: null,
+    payment: null
 
   }
 
@@ -44,6 +46,16 @@ class HomeRoot extends Component{
     })
   }
 
+  getPaymentDetails = (payments) => {
+    this.setState({
+      payment:payments
+    })
+  }
+
+  sendEmail = () => {
+
+  }
+
 
   render(){
     return (
@@ -55,7 +67,8 @@ class HomeRoot extends Component{
 
           <ProtectedRoute  exact path="/Home/" component={TrainSelection} getSelectedTrain={this.getSelectedTrain}/>
           <ProtectedRoute  exact path="/Home/AboutUs" component={AboutUs}/>
-          <ProtectedRoute  exact path="/Home/Payment" component={Payment} selectedTrain={this.state.selectedTrain} loggedUser={this.state.loggedUser}/>
+          <ProtectedRoute  exact path="/Home/Summary" component={Summary} details={this.state} sendEmail={this.sendEmail}/>
+          <ProtectedRoute  exact path="/Home/Payment" component={Payment} getPaymentDetails={this.getPaymentDetails} selectedTrain={this.state.selectedTrain} loggedUser={this.state.loggedUser}/>
 
           
         </div>
